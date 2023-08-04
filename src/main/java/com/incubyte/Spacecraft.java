@@ -123,7 +123,14 @@ public class Spacecraft {
     
     public void turnDown()
     {
-    	
+    	switch (direction) {
+        case N:
+        case S:
+        case E:
+        case W:
+            direction = Direction.D;
+            break;
+    }
     }
     
     public String getPosition()
