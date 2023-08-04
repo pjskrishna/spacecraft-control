@@ -15,7 +15,28 @@ public class Spacecraft {
     
     public void moveForward()
     {
-    	
+    	switch (direction) {
+        case N:
+            y += 1;
+            break;
+        case S:
+            y -= 1;
+            break;
+        case E:
+            x += 1;
+            break;
+        case W:
+            x -= 1;
+            break;
+        case U:
+            z += 1;
+            break;
+        case D:
+            z -= 1;
+            break;
+        default:
+            break;
+    }
     }
     
     public void moveBackward()

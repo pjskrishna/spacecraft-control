@@ -85,7 +85,7 @@ public class SpacecraftTest {
         });
     }
 	
-    //Define all necessary data to test each type of 
+    //Define all necessary data to test
 	private int startX;
 	private int startY;
 	private int startZ;
@@ -106,7 +106,7 @@ public class SpacecraftTest {
     }
     
     @Test
-    public void testMoveForward() {
+    public void testSpacecraft() {
         for (Object[] testData : dataForMoveForward()) {
             int startX = (Integer) testData[0];
             int startY = (Integer) testData[1];
@@ -118,16 +118,18 @@ public class SpacecraftTest {
 
             Spacecraft spacecraft = new Spacecraft(startX, startY, startZ, startDirection);
             
-            if(command == "f") {spacecraft.moveForward();}
-            else if(command == "b") {spacecraft.moveBackward();}
-            else if(command == "l") {spacecraft.turnLeft();}
-            else if(command == "r") {spacecraft.turnRight();}
-            else if(command == "u") {spacecraft.turnUp();}
-            else if(command == "d") {spacecraft.turnDown();}
+            if(command.equals("f")) {spacecraft.moveForward();}
+            else if(command.equals("b")) {spacecraft.moveBackward();}
+            else if(command.equals("l")) {spacecraft.turnLeft();}
+            else if(command.equals("r")) {spacecraft.turnRight();}
+            else if(command.equals("u")) {spacecraft.turnUp();}
+            else if(command.equals("d")) {spacecraft.turnDown();}
+            assertEquals(expectedPosition, spacecraft.getPosition());
+            assertEquals(expectedDirection, spacecraft.getDirection());
 
             
         }
-    }
+            }
 	
 	//Initially all failed
 	
