@@ -88,7 +88,25 @@ public class Spacecraft {
     
     public void turnRight()
     {
-    	
+    	 switch (direction) {
+         case N:
+             direction = Direction.E;
+             break;
+         case S:
+             direction = Direction.W;
+             break;
+         case E:
+             direction = Direction.S;
+             break;
+         case W:
+             direction = Direction.N;
+             break;
+         case U:
+        	 direction = Direction.E;
+         case D:
+        	 direction = Direction.W;
+        	 
+     }
     }
     
     public void turnUp()
