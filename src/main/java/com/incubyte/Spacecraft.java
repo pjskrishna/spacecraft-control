@@ -1,5 +1,8 @@
 package com.incubyte;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Spacecraft {
 	private int x;
     private int y;
@@ -13,9 +16,9 @@ public class Spacecraft {
         this.direction = direction;
     }
     
-    public void moveForward()
+    public static void moveForward()
     {
-    	switch (direction) {
+    	switch (this.direction) {
         case N:
             y += 1;
             
@@ -151,5 +154,25 @@ public class Spacecraft {
 
 	public Direction getDirection() {
 		return this.direction;
+	}
+
+	public static void processCommands(Spacecraft chandrayaan_3, List<Object> commands) {
+		// TODO Auto-generated method stub
+		for (Object command : commands) {
+	        if (command.equals('f'))
+	            chandrayaan_3.moveForward();
+	        else if (command.equals('b'))
+	            chandrayaan_3.moveBackward();
+	        else if (command.equals('l'))
+	            chandrayaan_3.turnLeft();
+	        else if (command.equals('r'))
+	            chandrayaan_3.turnRight();
+	        else if (command.equals('u'))
+	            chandrayaan_3.turnUp();
+	        else if (command.equals('d'))
+	            chandrayaan_3.turnDown();
+	    }
+
+		
 	}
 }

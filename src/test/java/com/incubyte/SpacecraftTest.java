@@ -64,10 +64,10 @@ public class SpacecraftTest {
                 {0, 0, 0, Direction.W, "d", "(0, 0, 0)", Direction.D},
                 {0, 0, 0, Direction.N, "d", "(0, 0, 0)", Direction.D},
 
-//                {-1, -1, -1, Direction.S, "d", "(-1, -1, -1)", Direction.D},
-//                {2, -3, 4, Direction.W, "d", "(2, -3, 4)", Direction.D},
-//                {0, 0, 0, Direction.E, "d", "(0, 0, 0)", Direction.D},
-//                {3, 5, 1, Direction.S, "d", "(3, 5, 1)", Direction.D}
+                {-1, -1, -1, Direction.S, "d", "(-1, -1, -1)", Direction.D},
+                {2, -3, 4, Direction.W, "d", "(2, -3, 4)", Direction.D},
+                {0, 0, 0, Direction.E, "d", "(0, 0, 0)", Direction.D},
+                {3, 5, 1, Direction.S, "d", "(3, 5, 1)", Direction.D}
         });
     }
 	
