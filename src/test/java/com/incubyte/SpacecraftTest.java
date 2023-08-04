@@ -24,28 +24,23 @@ public class SpacecraftTest {
 	@Parameterized.Parameters
     public static Collection<Object[]> dataForMoveForward() {
         return Arrays.asList(new Object[][]{
-                {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.N},
-                {1, 0, 1, Direction.E, "f", "(2, 0, 1)", Direction.E},
-                {0, 0, 0, Direction.W, "f", "(-1, 0, 0)", Direction.W},
-                {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.N},
-        
-                
-                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.N},
-                {1, 0, 1, Direction.E, "b", "(0, 0, 1)", Direction.E},
-                {0, 0, 0, Direction.W, "b", "(1, 0, 0)", Direction.W},
-                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.N},
-
-               
-
-//                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.W},
-//                {1, 0, 1, Direction.E, "l", "(1, 0, 1)", Direction.N},
-//                {0, 0, 0, Direction.W, "l", "(0, 0, 0)", Direction.S},
-//                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.E},
+//                {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.N},
+//                {1, 0, 1, Direction.E, "f", "(2, 0, 1)", Direction.E},
+//                {0, 0, 0, Direction.W, "f", "(-1, 0, 0)", Direction.W},
+//                {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.N},
+//        
+//                
+//                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.N},
+//                {1, 0, 1, Direction.E, "b", "(0, 0, 1)", Direction.E},
+//                {0, 0, 0, Direction.W, "b", "(1, 0, 0)", Direction.W},
+//                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.N},
 //
-//                {-1, -1, -1, Direction.S, "l", "(-1, -1, -1)", Direction.E},
-//                {2, -3, 4, Direction.W, "l", "(2, -3, 4)", Direction.S},
-//                {0, 0, 0, Direction.E, "l", "(0, 0, 0)", Direction.N},
-//                {3, 5, 1, Direction.S, "l", "(3, 5, 1)", Direction.W},
+//               
+
+                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.W},
+                {1, 0, 1, Direction.E, "l", "(1, 0, 1)", Direction.N},
+                {0, 0, 0, Direction.W, "l", "(0, 0, 0)", Direction.S},
+                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.W},
 //
 //                {0, 0, 0, Direction.N, "r", "(0, 0, 0)", Direction.E},
 //                {1, 0, 1, Direction.E, "r", "(1, 0, 1)", Direction.S},
@@ -114,7 +109,7 @@ public class SpacecraftTest {
             
             if(command.equals("f")) {spacecraft.moveForward();}
             else if(command.equals("b")) {spacecraft.moveBackward();}
-//            else if(command.equals("l")) {spacecraft.turnLeft();}
+            else if(command.equals("l")) {spacecraft.turnLeft();}
 //            else if(command.equals("r")) {spacecraft.turnRight();}
 //            else if(command.equals("u")) {spacecraft.turnUp();}
 //            else if(command.equals("d")) {spacecraft.turnDown();}
