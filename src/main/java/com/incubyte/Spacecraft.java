@@ -43,8 +43,23 @@ public class Spacecraft {
     	
     }
     
-    public String currentPosition()
+    public String getPosition()
     {
     	return "(" + x + ", " + y + ", " + z + ")";
     }
+    
+    public void setPosition(int x, int y,int z)
+    {
+    	this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+    public void setDirection(Direction d)
+    {
+    	this.direction = d;
+    }
+
+	public Direction getDirection() {
+		return this.direction;
+	}
 }
