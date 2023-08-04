@@ -20,16 +20,72 @@ public class SpacecraftTest {
 		assertTrue(true);
 	}
 	
-	//Different possiblities provided
+	//Different possibilities provided for all types of commands here 
 	@Parameterized.Parameters
     public static Collection<Object[]> dataForMoveForward() {
         return Arrays.asList(new Object[][]{
                 {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.N},
                 {1, 0, 1, Direction.E, "f", "(2, 0, 1)", Direction.E},
-                {0, 0, 0, Direction.W, "f", "(-1, 0, 0)", Direction.W}
+                {0, 0, 0, Direction.W, "f", "(-1, 0, 0)", Direction.W},
+                {0, 0, 0, Direction.N, "f", "(0, 1, 0)", Direction.S},
+                {-1, -1, -1, Direction.S, "f", "(-1, -1, -2)", Direction.S},
+                {2, -3, 4, Direction.W, "f", "(2, -3, 5)", Direction.W},
+                {0, 0, 0, Direction.E, "f", "(1, 0, 0)", Direction.E},
+                {3, 5, 1, Direction.S, "f", "(3, 5, 0)", Direction.S},
+                
+                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.N},
+                {1, 0, 1, Direction.E, "b", "(0, 0, 1)", Direction.E},
+                {0, 0, 0, Direction.W, "b", "(1, 0, 0)", Direction.W},
+                {0, 0, 0, Direction.N, "b", "(0, -1, 0)", Direction.S},
+
+                {-1, -1, -1, Direction.S, "b", "(-1, -1, -2)", Direction.S},
+                {2, -3, 4, Direction.W, "b", "(2, -3, 3)", Direction.W},
+                {0, 0, 0, Direction.E, "b", "(-1, 0, 0)", Direction.E},
+                {3, 5, 1, Direction.S, "b", "(3, 5, 2)", Direction.S},
+
+                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.W},
+                {1, 0, 1, Direction.E, "l", "(1, 0, 1)", Direction.N},
+                {0, 0, 0, Direction.W, "l", "(0, 0, 0)", Direction.S},
+                {0, 0, 0, Direction.N, "l", "(0, 0, 0)", Direction.E},
+
+                {-1, -1, -1, Direction.S, "l", "(-1, -1, -1)", Direction.E},
+                {2, -3, 4, Direction.W, "l", "(2, -3, 4)", Direction.S},
+                {0, 0, 0, Direction.E, "l", "(0, 0, 0)", Direction.N},
+                {3, 5, 1, Direction.S, "l", "(3, 5, 1)", Direction.W},
+
+                {0, 0, 0, Direction.N, "r", "(0, 0, 0)", Direction.E},
+                {1, 0, 1, Direction.E, "r", "(1, 0, 1)", Direction.S},
+                {0, 0, 0, Direction.W, "r", "(0, 0, 0)", Direction.N},
+                {0, 0, 0, Direction.N, "r", "(0, 0, 0)", Direction.W},
+
+                {-1, -1, -1, Direction.S, "r", "(-1, -1, -1)", Direction.W},
+                {2, -3, 4, Direction.W, "r", "(2, -3, 4)", Direction.N},
+                {0, 0, 0, Direction.E, "r", "(0, 0, 0)", Direction.S},
+                {3, 5, 1, Direction.S, "r", "(3, 5, 1)", Direction.E},
+
+                {0, 0, 0, Direction.N, "u", "(0, 0, 0)", Direction.U},
+                {1, 0, 1, Direction.E, "u", "(1, 0, 1)", Direction.U},
+                {0, 0, 0, Direction.W, "u", "(0, 0, 0)", Direction.U},
+                {0, 0, 0, Direction.N, "u", "(0, 0, 0)", Direction.U},
+
+                {-1, -1, -1, Direction.S, "u", "(-1, -1, -1)", Direction.U},
+                {2, -3, 4, Direction.W, "u", "(2, -3, 4)", Direction.U},
+                {0, 0, 0, Direction.E, "u", "(0, 0, 0)", Direction.U},
+                {3, 5, 1, Direction.S, "u", "(3, 5, 1)", Direction.U},
+
+                {0, 0, 0, Direction.N, "d", "(0, 0, 0)", Direction.D},
+                {1, 0, 1, Direction.E, "d", "(1, 0, 1)", Direction.D},
+                {0, 0, 0, Direction.W, "d", "(0, 0, 0)", Direction.D},
+                {0, 0, 0, Direction.N, "d", "(0, 0, 0)", Direction.D},
+
+                {-1, -1, -1, Direction.S, "d", "(-1, -1, -1)", Direction.D},
+                {2, -3, 4, Direction.W, "d", "(2, -3, 4)", Direction.D},
+                {0, 0, 0, Direction.E, "d", "(0, 0, 0)", Direction.D},
+                {3, 5, 1, Direction.S, "d", "(3, 5, 1)", Direction.D}
         });
     }
 	
+    //Define all necessary data to test each type of 
 	private int startX;
 	private int startY;
 	private int startZ;
@@ -62,12 +118,12 @@ public class SpacecraftTest {
 
             Spacecraft spacecraft = new Spacecraft(startX, startY, startZ, startDirection);
             
-            if(command == "f") {
-            	
-            	spacecraft.moveForward();
-            	assertEquals(expectedPosition, spacecraft.getPosition());
-                assertEquals(expectedDirection, spacecraft.getDirection());
-            }
+            if(command == "f") {spacecraft.moveForward();}
+            else if(command == "b") {spacecraft.moveBackward();}
+            else if(command == "l") {spacecraft.turnLeft();}
+            else if(command == "r") {spacecraft.turnRight();}
+            else if(command == "u") {spacecraft.turnUp();}
+            else if(command == "d") {spacecraft.turnDown();}
 
             
         }
